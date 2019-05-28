@@ -10,6 +10,7 @@ node {
 stage ('Build') {
        sh "'${mvn1}/bin/mvn' -Dmaven.test.failure.ignore clean package"
    }
+   
 
 stage ('Docker Image Build') {
        app = docker.build("paulsoumi96/devops:${BUILD_NUMBER}")
